@@ -1,6 +1,6 @@
 services:
   rabbit:
-    image: rabbitmq:3.13-management
+    image: rabbitmq:4.0-management
     hostname: rabbitmq
     ports:
       - "5672:5672"
@@ -16,7 +16,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "eazybytes/configserver:s6"
+    image: "hieptt149/configserver:s6"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -31,10 +31,10 @@ services:
       start_period: 10s
     extends:
       file: common-config.yml
-      service: microservice-base-config
+      service: ms-base-config
 
   accounts:
-    image: "eazybytes/accounts:s6"
+    image: "hieptt149/accounts:s6"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -45,10 +45,10 @@ services:
       SPRING_APPLICATION_NAME: "accounts"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: ms-configserver-config
 
   loans:
-    image: "eazybytes/loans:s6"
+    image: "hieptt149/loans:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -59,10 +59,10 @@ services:
       SPRING_APPLICATION_NAME: "loans"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: ms-configserver-config
 
   cards:
-    image: "eazybytes/cards:s6"
+    image: "hieptt149/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -73,8 +73,8 @@ services:
       SPRING_APPLICATION_NAME: "cards"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: ms-configserver-config
 
 networks:
-  eazybank:
+  hieptt149:
     driver: "bridge"

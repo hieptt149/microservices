@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: "eazybytes/accounts:s4"
+    image: "hieptt149/accounts:s4"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -9,9 +9,9 @@ services:
         limits:
           memory: 700m
     networks:
-      - eazybank
+      - hieptt-demo
   loans:
-    image: "eazybytes/loans:s4"
+    image: "hieptt149/loans:s4"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -20,9 +20,9 @@ services:
         limits:
           memory: 700m
     networks:
-      - eazybank
+      - hieptt-demo
   cards:
-    image: "eazybytes/cards:s4"
+    image: "hieptt149/cards:s4"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -31,7 +31,7 @@ services:
         limits:
           memory: 700m
     networks:
-      - eazybank
+      - hieptt-demo
 networks:
-  eazybank:
+  hieptt-demo:
     driver: "bridge"
