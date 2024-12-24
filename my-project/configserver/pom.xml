@@ -8,7 +8,7 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hieptt149</groupId>
+	<groupId>com.eazybytes</groupId>
 	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>configserver</name>
@@ -25,6 +25,14 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-monitor</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,7 +64,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>hieptt149/${project.artifactId}:s7</image>
+						<image>hieptt149/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>

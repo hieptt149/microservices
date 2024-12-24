@@ -8,7 +8,7 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hieptt149</groupId>
+	<groupId>com.eazybytes</groupId>
 	<artifactId>loans</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -40,14 +40,18 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -87,7 +91,7 @@
 				<version>3.4.2</version>
 				<configuration>
 					<to>
-						<image>hieptt149/${project.artifactId}:s7</image>
+						<image>hieptt149/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>
