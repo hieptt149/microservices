@@ -7,6 +7,8 @@
 plugins {
     `java-library`
     `maven-publish`
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
 }
 
 repositories {
@@ -17,24 +19,29 @@ repositories {
 }
 
 dependencies {
-    api(libs.org.springframework.boot.spring.boot.starter.actuator)
-    api(libs.org.springframework.boot.spring.boot.starter.data.jpa)
-    api(libs.org.springframework.boot.spring.boot.starter.web)
-    api(libs.org.springframework.cloud.spring.cloud.starter.config)
+    api(libs.spring.boot.actuator)
+    api(libs.spring.boot.data.jpa)
+    api(libs.spring.boot.validation)
+    api(libs.spring.boot.web)
 
-    api(libs.org.projectlombok.lombok)
-    compileOnly(libs.org.projectlombok.lombok)
-    annotationProcessor(libs.org.projectlombok.lombok)
+    // bom implementation (~import mavenBom)
+    implementation(platform(libs.spring.cloud.dependencies))
+    api(libs.spring.cloud.config)
+    api(libs.spring.cloud.eureka.client)
 
-    api(libs.org.springframework.boot.spring.boot.starter.validation)
-    api(libs.org.springdoc.springdoc.openapi.starter.webmvc.ui)
-    runtimeOnly(libs.com.h2database.h2)
+    api(libs.lombok)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+
+    api(libs.openapi)
+    runtimeOnly(libs.spring.boot.devtools)
+    runtimeOnly(libs.h2database)
 
     // Test
-    testImplementation(libs.org.springframework.boot.spring.boot.starter.test)
+    testImplementation(libs.spring.boot.test)
 
-    testCompileOnly(libs.org.projectlombok.lombok)
-    testAnnotationProcessor(libs.org.projectlombok.lombok)
+    testCompileOnly(libs.lombok)
+    testAnnotationProcessor(libs.lombok)
 }
 
 group = "com.hieptt149"

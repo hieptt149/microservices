@@ -2,25 +2,35 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-com-h2database-h2 = "2.2.224"
-org-projectlombok-lombok = "1.18.34"
-org-springdoc-springdoc-openapi-starter-webmvc-ui = "2.6.0"
-org-springframework-boot-spring-boot-devtools = "3.3.2"
-org-springframework-boot-spring-boot-starter-actuator = "3.3.2"
-org-springframework-boot-spring-boot-starter-data-jpa = "3.3.2"
-org-springframework-boot-spring-boot-starter-test = "3.3.2"
-org-springframework-boot-spring-boot-starter-validation = "3.3.2"
-org-springframework-boot-spring-boot-starter-web = "3.3.2"
-org-springframework-cloud-spring-cloud-starter-config = "4.1.3"
+springBoot = "3.4.1"
+springDependencyManagement = "1.1.7"
+h2Database = "2.2.224"
+lombok = "1.18.34"
+openapi = "2.6.0"
+springBootDevtools = "3.3.2"
+springBootActuator = "3.3.2"
+springBootJpa = "3.3.2"
+springBootTest = "3.3.2"
+springBootValidation = "3.3.2"
+springBootWeb = "3.3.2"
+springCloudDependencies = "2024.0.0"
+springCloudConfig = "4.1.3"
+springCloudEurekaClient = "4.2.0"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
 
 [libraries]
-com-h2database-h2 = { module = "com.h2database:h2", version.ref = "com-h2database-h2" }
-org-projectlombok-lombok = { module = "org.projectlombok:lombok", version.ref = "org-projectlombok-lombok" }
-org-springdoc-springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "org-springdoc-springdoc-openapi-starter-webmvc-ui" }
-org-springframework-boot-spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "org-springframework-boot-spring-boot-devtools" }
-org-springframework-boot-spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "org-springframework-boot-spring-boot-starter-actuator" }
-org-springframework-boot-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "org-springframework-boot-spring-boot-starter-data-jpa" }
-org-springframework-boot-spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "org-springframework-boot-spring-boot-starter-test" }
-org-springframework-boot-spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "org-springframework-boot-spring-boot-starter-validation" }
-org-springframework-boot-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "org-springframework-boot-spring-boot-starter-web" }
-org-springframework-cloud-spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "org-springframework-cloud-spring-cloud-starter-config" }
+h2database = { module = "com.h2database:h2", version.ref = "h2Database" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+openapi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "openapi" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "springBootDevtools" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBootActuator" }
+spring-boot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springBootJpa" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTest" }
+spring-boot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "springBootValidation" }
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBootWeb" }
+spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
+spring-cloud-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "springCloudConfig" }
+spring-cloud-eureka-client = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client", version.ref = "springCloudEurekaClient" }
