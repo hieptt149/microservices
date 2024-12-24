@@ -1,6 +1,8 @@
 plugins {
 	`java-library`
 	`maven-publish`
+	alias(libs.plugins.spring.boot)
+	alias(libs.plugins.spring.dependency.management)
 }
 
 group = "com.hieptt149"
@@ -12,12 +14,15 @@ repositories {
 }
 
 dependencies {
-	api(libs.org.springframework.boot.spring.boot.starter.actuator)
-	api(libs.org.springframework.cloud.spring.cloud.starter.config)
+	api(libs.spring.boot.starter.actuator)
+
+	// bom implementation (~import mavenBom)
+	implementation(platform(libs.spring.cloud.dependencies))
+	api(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.eureka.server)
 
 	// Test
-	testImplementation(libs.org.springframework.boot.spring.boot.starter.test)
+	testImplementation(libs.spring.boot.starter.test)
 	testRuntimeOnly(libs.junit.platform.launcher)
 }
 

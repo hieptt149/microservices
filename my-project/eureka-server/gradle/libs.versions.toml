@@ -2,15 +2,23 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-org-springframework-boot-spring-boot-starter-actuator = "3.3.2"
-org-springframework-boot-spring-boot-starter-test = "3.3.2"
-org-springframework-cloud-spring-cloud-starter-config = "4.1.3"
-spring-cloud-eureka-server = "4.2.0"
-junit-platform-launcher = "1.11.4"
+springBoot = "3.4.1"
+springDependencyManagement = "1.1.7"
+springBootActuatorStarter = "3.3.2"
+springBootTestStarter = "3.3.2"
+springCloudDependencies = "2024.0.0"
+springCloudConfigStarter = "4.1.3"
+springCloudEurekaServer = "4.2.0"
+junitPlatformLauncher = "1.11.4"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
 
 [libraries]
-org-springframework-boot-spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "org-springframework-boot-spring-boot-starter-actuator" }
-org-springframework-boot-spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "org-springframework-boot-spring-boot-starter-test" }
-org-springframework-cloud-spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "org-springframework-cloud-spring-cloud-starter-config" }
-spring-cloud-eureka-server = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server", version.ref = "spring-cloud-eureka-server" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBootActuatorStarter" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTestStarter" }
+spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
+spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "springCloudConfigStarter" }
+spring-cloud-eureka-server = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server", version.ref = "springCloudEurekaServer" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }
