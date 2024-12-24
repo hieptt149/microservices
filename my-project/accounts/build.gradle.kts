@@ -28,6 +28,7 @@ dependencies {
     implementation(platform(libs.spring.cloud.dependencies))
     api(libs.spring.cloud.config)
     api(libs.spring.cloud.eureka.client)
+    api(libs.spring.cloud.openfeign)
 
     api(libs.lombok)
     compileOnly(libs.lombok)

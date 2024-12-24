@@ -1,4 +1,4 @@
-package com.hieptt149.loans.dto;
+package com.hieptt149.accounts.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
