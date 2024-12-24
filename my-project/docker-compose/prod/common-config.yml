@@ -11,9 +11,15 @@ services:
         limits:
           memory: 700m
 
-  ms-configserver-config:
+  ms-eureka-config:
     extends:
       service: ms-base-config
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+
+  ms-service-config:
+    extends:
+      service: ms-eureka-config
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/

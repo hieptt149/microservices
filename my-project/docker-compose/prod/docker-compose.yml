@@ -1,6 +1,6 @@
 services:
   configserver:
-    image: "hieptt149/configserver:s6"
+    image: "hieptt149/configserver:s8"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -14,47 +14,67 @@ services:
       file: common-config.yml
       service: ms-base-config
 
+  eureka-server:
+    image: "hieptt149/eureka-server:s8"
+    container_name: eureka-server-ms
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    depends_on:
+      configserver:
+        condition: service_healthy
+    extends:
+      file: common-config.yml
+      service: ms-eureka-config
+    environment:
+      SPRING_APPLICATION_NAME: "eureka-server"
+
   accounts:
-    image: "hieptt149/accounts:s6"
+    image: "hieptt149/accounts:s8"
     container_name: accounts-ms
     ports:
       - "8080:8080"
     depends_on:
-      configserver:
+      eureka-server:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "accounts"
     extends:
       file: common-config.yml
-      service: ms-configserver-config
+      service: ms-service-config
 
   loans:
-    image: "hieptt149/loans:s6"
+    image: "hieptt149/loans:s8"
     container_name: loans-ms
     ports:
       - "8090:8090"
     depends_on:
-      configserver:
+      eureka-server:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "loans"
     extends:
       file: common-config.yml
-      service: ms-configserver-config
+      service: ms-service-config
 
   cards:
-    image: "hieptt149/cards:s6"
+    image: "hieptt149/cards:s8"
     container_name: cards-ms
     ports:
       - "9000:9000"
     depends_on:
-      configserver:
+      eureka-server:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "cards"
     extends:
       file: common-config.yml
-      service: ms-configserver-config
+      service: ms-service-config
 
 networks:
   hieptt149:
