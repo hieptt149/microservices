@@ -62,6 +62,20 @@ services:
       file: common-config.yml
       service: ms-service-config
 
+  loans1:
+    image: "hieptt149/loans:s8"
+    container_name: loans-ms1
+    ports:
+      - "8091:8090"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+    extends:
+      file: common-config.yml
+      service: ms-service-config
+
   cards:
     image: "hieptt149/cards:s8"
     container_name: cards-ms
