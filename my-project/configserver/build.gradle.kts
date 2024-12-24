@@ -7,6 +7,7 @@
 plugins {
     `java-library`
     `maven-publish`
+    alias(libs.plugins.jib)
 }
 
 repositories {
@@ -17,9 +18,9 @@ repositories {
 }
 
 dependencies {
-    api(libs.org.springframework.boot.spring.boot.starter.actuator)
-    api(libs.org.springframework.cloud.spring.cloud.config.server)
-    testImplementation(libs.org.springframework.boot.spring.boot.starter.test)
+    implementation(libs.spring.boot.actuator)
+    implementation(libs.spring.cloud.config.server)
+    testImplementation(libs.spring.boot.test)
 }
 
 group = "com.hieptt149"
@@ -39,4 +40,10 @@ tasks.withType<JavaCompile>() {
 
 tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
+}
+
+jib {
+    to {
+        image = "hieptt149/configserver:s8"
+    }
 }

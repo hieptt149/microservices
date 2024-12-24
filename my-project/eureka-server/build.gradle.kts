@@ -3,6 +3,7 @@ plugins {
 	`maven-publish`
 	alias(libs.plugins.spring.boot)
 	alias(libs.plugins.spring.dependency.management)
+	alias(libs.plugins.jib)
 }
 
 group = "com.hieptt149"
@@ -14,11 +15,11 @@ repositories {
 }
 
 dependencies {
-	api(libs.spring.boot.starter.actuator)
+	implementation(libs.spring.boot.starter.actuator)
 
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
-	api(libs.spring.cloud.starter.config)
+	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.eureka.server)
 
 	// Test
@@ -28,4 +29,10 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+jib {
+	to {
+		image = "hieptt149/eureka-server:s8"
+	}
 }

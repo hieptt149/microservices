@@ -9,6 +9,7 @@ plugins {
     `maven-publish`
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.jib)
 }
 
 repositories {
@@ -19,21 +20,21 @@ repositories {
 }
 
 dependencies {
-    api(libs.spring.boot.actuator)
-    api(libs.spring.boot.data.jpa)
-    api(libs.spring.boot.validation)
-    api(libs.spring.boot.web)
+    implementation(libs.spring.boot.actuator)
+    implementation(libs.spring.boot.data.jpa)
+    implementation(libs.spring.boot.validation)
+    implementation(libs.spring.boot.web)
 
     // bom implementation (~import mavenBom)
     implementation(platform(libs.spring.cloud.dependencies))
-    api(libs.spring.cloud.config)
-    api(libs.spring.cloud.eureka.client)
+    implementation(libs.spring.cloud.config)
+    implementation(libs.spring.cloud.eureka.client)
 
-    api(libs.lombok)
+    implementation(libs.lombok)
     compileOnly(libs.lombok)
     annotationProcessor(libs.lombok)
 
-    api(libs.openapi)
+    implementation(libs.openapi)
     runtimeOnly(libs.spring.boot.devtools)
     runtimeOnly(libs.h2database)
 
@@ -61,4 +62,10 @@ tasks.withType<JavaCompile>() {
 
 tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
+}
+
+jib {
+    to {
+        image = "hieptt149/loans:s8"
+    }
 }

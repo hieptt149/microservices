@@ -16,10 +16,12 @@ springBootWeb = "3.3.2"
 springCloudDependencies = "2024.0.0"
 springCloudConfig = "4.1.3"
 springCloudEurekaClient = "4.2.0"
+jib = "3.4.4"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
 spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 
 [libraries]
 h2database = { module = "com.h2database:h2", version.ref = "h2Database" }
