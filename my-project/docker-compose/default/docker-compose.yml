@@ -1,6 +1,6 @@
 services:
   configserver:
-    image: "hieptt149/configserver:s8"
+    image: "hieptt149/configserver:s9"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -15,7 +15,7 @@ services:
       service: ms-base-config
 
   eureka-server:
-    image: "hieptt149/eureka-server:s8"
+    image: "hieptt149/eureka-server:s9"
     container_name: eureka-server-ms
     ports:
       - "8070:8070"
@@ -35,7 +35,7 @@ services:
       SPRING_APPLICATION_NAME: "eureka-server"
 
   accounts:
-    image: "hieptt149/accounts:s8"
+    image: "hieptt149/accounts:s9"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -49,7 +49,7 @@ services:
       service: ms-service-config
 
   loans:
-    image: "hieptt149/loans:s8"
+    image: "hieptt149/loans:s9"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -63,7 +63,7 @@ services:
       service: ms-service-config
 
   loans1:
-    image: "hieptt149/loans:s8"
+    image: "hieptt149/loans:s9"
     container_name: loans-ms1
     ports:
       - "8091:8090"
@@ -77,7 +77,7 @@ services:
       service: ms-service-config
 
   cards:
-    image: "hieptt149/cards:s8"
+    image: "hieptt149/cards:s9"
     container_name: cards-ms
     ports:
       - "9000:9000"

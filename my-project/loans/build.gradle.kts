@@ -66,6 +66,6 @@ tasks.withType<Javadoc>() {
 
 jib {
     to {
-        image = "hieptt149/loans:s8"
+        image = "hieptt149/loans:s9"
     }
 }

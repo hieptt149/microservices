@@ -14,14 +14,19 @@ repositories {
 	mavenCentral()
 }
 
+extra["springCloudVersion"] = "2024.0.0"
+
 dependencies {
 	implementation(libs.spring.boot.starter.actuator)
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
 	implementation(libs.spring.cloud.starter.config)
-	implementation(libs.spring.cloud.eureka.server)
+	implementation(libs.spring.cloud.gateway)
+	implementation(libs.spring.cloud.eureka.client)
+	developmentOnly(libs.spring.boot.devtools)
 
 	// Test
+	testImplementation(libs.reactor.test)
 	testImplementation(libs.spring.boot.starter.test)
 	testRuntimeOnly(libs.junit.platform.launcher)
 }
@@ -32,6 +37,6 @@ tasks.withType<Test> {
 
 jib {
 	to {
-		image = "hieptt149/eureka-server:s9"
+		image = "hieptt149/gateway-server:s9"
 	}
 }
