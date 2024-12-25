@@ -27,3 +27,9 @@ info:
     name: "gateway-server"
     description: "Eazy Bank Gateway Server Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      hieptt149:
+        gateway_server: DEBUG

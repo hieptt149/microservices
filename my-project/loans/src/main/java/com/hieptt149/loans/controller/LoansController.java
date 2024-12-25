@@ -14,6 +14,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -22,6 +24,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import static com.hieptt149.loans.constants.LoansConstants.EAZYBANK_CORRELATION_ID;
 
 /**
  * @author Eazy Bytes
@@ -36,13 +40,18 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
-    private ILoansService iLoansService;
+    private static final Logger logger = LoggerFactory.getLogger(LoansController.class);
+
     @Value("${build.version}")
     private String buildVersion;
+
     @Autowired
     private Environment environment;
+
     @Autowired
     private LoansContactInfoDto loansContactInfoDto;
+
+    private ILoansService iLoansService;
 
     public LoansController(ILoansService iLoansService) {
         this.iLoansService = iLoansService;
@@ -96,10 +105,12 @@ public class LoansController {
     )
     @GetMapping("/fetch")
     public ResponseEntity<LoansDto> fetchLoanDetails(
+            @RequestHeader(EAZYBANK_CORRELATION_ID) String correlationId,
             @RequestParam
             @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
             String mobileNumber
     ) {
+        logger.debug("eazybank-correlation-id found: {}", correlationId);
         LoansDto loansDto = iLoansService.fetchLoan(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(loansDto);
     }
