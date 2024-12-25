@@ -23,6 +23,7 @@ dependencies {
 	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.gateway)
 	implementation(libs.spring.cloud.eureka.client)
+	implementation(libs.spring.cloud.reactor.resilience4j)
 	developmentOnly(libs.spring.boot.devtools)
 
 	// Test
