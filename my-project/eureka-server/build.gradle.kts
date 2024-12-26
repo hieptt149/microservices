@@ -20,6 +20,7 @@ dependencies {
 	implementation(platform(libs.spring.cloud.dependencies))
 	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.eureka.server)
+	implementation(libs.micrometer.prometheus)
 
 	// Test
 	testImplementation(libs.spring.boot.starter.test)

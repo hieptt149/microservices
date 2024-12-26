@@ -35,6 +35,7 @@ dependencies {
     annotationProcessor(libs.lombok)
 
     implementation(libs.openapi)
+    implementation(libs.micrometer.prometheus)
     runtimeOnly(libs.spring.boot.devtools)
     runtimeOnly(libs.h2database)
 

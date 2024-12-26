@@ -26,6 +26,7 @@ dependencies {
 	implementation(libs.spring.cloud.gateway)
 	implementation(libs.spring.cloud.eureka.client)
 	implementation(libs.spring.cloud.reactor.resilience4j)
+	implementation(libs.micrometer.prometheus)
 
 	// Test
 	testImplementation(libs.reactor.test)

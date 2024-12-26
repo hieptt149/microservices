@@ -16,6 +16,7 @@ springCloudReactorResilience4j = "3.2.0"
 junitPlatformLauncher = "1.11.4"
 jib = "3.4.4"
 reactorTest = "3.7.1"
+micrometerPrometheus = "1.14.2"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
@@ -34,3 +35,4 @@ spring-cloud-gateway = { module = "org.springframework.cloud:spring-cloud-starte
 spring-cloud-reactor-resilience4j = { module = "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j", version.ref = "springCloudReactorResilience4j" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }
 reactor-test = { module = "io.projectreactor:reactor-test", version.ref = "reactorTest" }
+micrometer-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometerPrometheus" }

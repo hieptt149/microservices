@@ -20,6 +20,7 @@ repositories {
 dependencies {
     implementation(libs.spring.boot.actuator)
     implementation(libs.spring.cloud.config.server)
+    implementation(libs.micrometer.prometheus)
     testImplementation(libs.spring.boot.test)
 }
 
