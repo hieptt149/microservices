@@ -44,6 +44,6 @@ tasks.withType<Javadoc>() {
 
 jib {
     to {
-        image = "hieptt149/configserver:s10"
+        image = "hieptt149/configserver:s11"
     }
 }
