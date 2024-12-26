@@ -39,6 +39,6 @@ tasks.withType<Test> {
 
 jib {
 	to {
-		image = "hieptt149/gateway-server:s9"
+		image = "hieptt149/gateway-server:s10"
 	}
 }
