@@ -18,13 +18,14 @@ extra["springCloudVersion"] = "2024.0.0"
 
 dependencies {
 	implementation(libs.spring.boot.starter.actuator)
+	implementation(libs.spring.boot.redis.reactive)
+	developmentOnly(libs.spring.boot.devtools)
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
 	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.gateway)
 	implementation(libs.spring.cloud.eureka.client)
 	implementation(libs.spring.cloud.reactor.resilience4j)
-	developmentOnly(libs.spring.boot.devtools)
 
 	// Test
 	testImplementation(libs.reactor.test)

@@ -7,6 +7,7 @@ springDependencyManagement = "1.1.7"
 springBootActuatorStarter = "3.3.2"
 springBootTestStarter = "3.3.2"
 springBootDevtools = "3.3.2"
+springBootRedisReactive = "3.4.1"
 springCloudDependencies = "2024.0.0"
 springCloudConfigStarter = "4.1.3"
 springCloudEurekaClient = "4.2.0"
@@ -25,6 +26,7 @@ jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBootActuatorStarter" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTestStarter" }
 spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "springBootDevtools" }
+spring-boot-redis-reactive = { module = "org.springframework.boot:spring-boot-starter-data-redis-reactive", version.ref = "springBootRedisReactive" }
 spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
 spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "springCloudConfigStarter" }
 spring-cloud-eureka-client = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client", version.ref = "springCloudEurekaClient" }
