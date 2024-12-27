@@ -17,6 +17,7 @@ junitPlatformLauncher = "1.11.4"
 jib = "3.4.4"
 reactorTest = "3.7.1"
 micrometerPrometheus = "1.14.2"
+otel = "2.11.0"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
@@ -36,3 +37,4 @@ spring-cloud-reactor-resilience4j = { module = "org.springframework.cloud:spring
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }
 reactor-test = { module = "io.projectreactor:reactor-test", version.ref = "reactorTest" }
 micrometer-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometerPrometheus" }
+opentelemetry = { module = "io.opentelemetry.javaagent:opentelemetry-javaagent", version.ref = "otel" }

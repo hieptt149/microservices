@@ -21,6 +21,8 @@ dependencies {
     implementation(libs.spring.boot.actuator)
     implementation(libs.spring.cloud.config.server)
     implementation(libs.micrometer.prometheus)
+    runtimeOnly(libs.opentelemetry)
+
     testImplementation(libs.spring.boot.test)
 }
 

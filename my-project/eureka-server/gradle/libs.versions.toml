@@ -12,6 +12,7 @@ springCloudEurekaServer = "4.2.0"
 junitPlatformLauncher = "1.11.4"
 jib = "3.4.4"
 micrometerPrometheus = "1.14.2"
+otel = "2.11.0"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
@@ -26,3 +27,4 @@ spring-cloud-starter-config = { module = "org.springframework.cloud:spring-cloud
 spring-cloud-eureka-server = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server", version.ref = "springCloudEurekaServer" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }
 micrometer-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometerPrometheus" }
+opentelemetry = { module = "io.opentelemetry.javaagent:opentelemetry-javaagent", version.ref = "otel" }

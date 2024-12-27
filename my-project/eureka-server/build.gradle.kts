@@ -21,6 +21,7 @@ dependencies {
 	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.eureka.server)
 	implementation(libs.micrometer.prometheus)
+	runtimeOnly(libs.opentelemetry)
 
 	// Test
 	testImplementation(libs.spring.boot.starter.test)

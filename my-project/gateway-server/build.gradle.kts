@@ -27,6 +27,7 @@ dependencies {
 	implementation(libs.spring.cloud.eureka.client)
 	implementation(libs.spring.cloud.reactor.resilience4j)
 	implementation(libs.micrometer.prometheus)
+	runtimeOnly(libs.opentelemetry)
 
 	// Test
 	testImplementation(libs.reactor.test)

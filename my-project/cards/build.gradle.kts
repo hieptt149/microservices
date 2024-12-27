@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.micrometer.prometheus)
     runtimeOnly(libs.spring.boot.devtools)
     runtimeOnly(libs.h2database)
+    runtimeOnly(libs.opentelemetry)
 
     // Test
     testImplementation(libs.spring.boot.test)

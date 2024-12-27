@@ -7,6 +7,7 @@ springBootTest = "3.3.2"
 springCloudConfigServer = "4.1.3"
 jib = "3.4.4"
 micrometerPrometheus = "1.14.2"
+otel = "2.11.0"
 
 [plugins]
 jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
@@ -16,3 +17,4 @@ spring-boot-actuator = { module = "org.springframework.boot:spring-boot-starter-
 spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTest" }
 spring-cloud-config-server = { module = "org.springframework.cloud:spring-cloud-config-server", version.ref = "springCloudConfigServer" }
 micrometer-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometerPrometheus" }
+opentelemetry = { module = "io.opentelemetry.javaagent:opentelemetry-javaagent", version.ref = "otel" }
