@@ -19,7 +19,11 @@ extra["springCloudVersion"] = "2024.0.0"
 dependencies {
 	implementation(libs.spring.boot.starter.actuator)
 	implementation(libs.spring.boot.redis.reactive)
+	implementation(libs.spring.boot.security)
+	implementation(libs.spring.security.resource.server)
+	implementation(libs.spring.security.jose)
 	developmentOnly(libs.spring.boot.devtools)
+
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
 	implementation(libs.spring.cloud.starter.config)
