@@ -16,17 +16,23 @@ repositories {
 }
 
 dependencies {
-	implementation(libs.spring.boot.starter)
-	implementation(libs.spring.cloud.function.context)
-	implementation(libs.spring.cloud.function.web)
+	implementation(libs.spring.cloud.stream)
+	implementation(libs.spring.cloud.stream.binder.rabbit)
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
 
 	// Test
 	testImplementation(libs.spring.boot.test)
+	testImplementation(libs.spring.cloud.stream.test.binder)
 	testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+jib {
+	to {
+		image = "hieptt149/message:s13"
+	}
 }

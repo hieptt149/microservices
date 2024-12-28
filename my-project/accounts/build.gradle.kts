@@ -31,6 +31,8 @@ dependencies {
     implementation(libs.spring.cloud.eureka.client)
     implementation(libs.spring.cloud.openfeign)
     implementation(libs.spring.cloud.resilience4j)
+    implementation(libs.spring.cloud.stream)
+    implementation(libs.spring.cloud.stream.binder.rabbit)
 
     implementation(libs.lombok)
     compileOnly(libs.lombok)
