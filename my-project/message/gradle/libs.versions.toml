@@ -1,0 +1,23 @@
+[versions]
+springBoot = "3.4.1"
+springDependencyManagement = "1.1.7"
+springBootStarter = "3.4.1"
+springBootTest = "3.3.2"
+springCloudDependencies = "2024.0.0"
+springCloudFunctionContext = "4.2.0"
+springCloudFunctionWeb = "4.2.0"
+junitPlatformLauncher = "1.11.4"
+jib = "3.4.4"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
+
+[libraries]
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springBootStarter" }
+spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
+spring-cloud-function-context = { module = "org.springframework.cloud:spring-cloud-function-context", version.ref = "springCloudFunctionContext" }
+spring-cloud-function-web = { module = "org.springframework.cloud:spring-cloud-starter-function-web", version.ref = "springCloudFunctionWeb" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTest" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }
