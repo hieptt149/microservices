@@ -1,4 +1,17 @@
 services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    ports:
+      - "7080:8080"
+    environment:
+      KEYCLOAK_ADMIN: "admin"
+      KEYCLOAK_ADMIN_PASSWORD: "admin"
+    command: "start-dev"
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   read:
     image: grafana/loki:latest
     command: "-config.file=/etc/loki/config.yaml -target=read"
@@ -233,7 +246,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "hieptt149/configserver:s11"
+    image: "hieptt149/configserver:s12"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -250,7 +263,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eureka-server:
-    image: "hieptt149/eureka-server:s11"
+    image: "hieptt149/eureka-server:s12"
     container_name: eureka-server-ms
     ports:
       - "8070:8070"
@@ -271,10 +284,8 @@ services:
       OTEL_SERVICE_NAME: "eureka-server"
 
   accounts:
-    image: "hieptt149/accounts:s11"
+    image: "hieptt149/accounts:s12"
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -292,10 +303,8 @@ services:
       service: ms-service-config
 
   loans:
-    image: "hieptt149/loans:s11"
+    image: "hieptt149/loans:s12"
     container_name: loans-ms
-    ports:
-      - "8090:8090"
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -313,10 +322,8 @@ services:
       service: ms-service-config
 
   cards:
-    image: "hieptt149/cards:s11"
+    image: "hieptt149/cards:s12"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -334,7 +341,7 @@ services:
       service: ms-service-config
 
   gateway-server:
-    image: "hieptt149/gateway-server:s11"
+    image: "hieptt149/gateway-server:s12"
     container_name: gateway-server-ms
     ports:
       - "8072:8072"
@@ -348,6 +355,7 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "gateway-server"
       OTEL_SERVICE_NAME: "gateway-server"
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
     extends:
       file: common-config.yml
       service: ms-service-config
