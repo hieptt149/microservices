@@ -262,7 +262,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "hieptt149/configserver:s13"
+    image: "hieptt149/configserver:s14"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -279,7 +279,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eureka-server:
-    image: "hieptt149/eureka-server:s13"
+    image: "hieptt149/eureka-server:s14"
     container_name: eureka-server-ms
     ports:
       - "8070:8070"
@@ -300,7 +300,7 @@ services:
       OTEL_SERVICE_NAME: "eureka-server"
 
   accounts:
-    image: "hieptt149/accounts:s13"
+    image: "hieptt149/accounts:s14"
     container_name: accounts-ms
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
@@ -322,7 +322,7 @@ services:
       service: ms-service-config
 
   loans:
-    image: "hieptt149/loans:s13"
+    image: "hieptt149/loans:s14"
     container_name: loans-ms
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
@@ -341,7 +341,7 @@ services:
       service: ms-service-config
 
   cards:
-    image: "hieptt149/cards:s13"
+    image: "hieptt149/cards:s14"
     container_name: cards-ms
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
@@ -360,7 +360,7 @@ services:
       service: ms-service-config
 
   message:
-    image: "hieptt149/message:s13"
+    image: "hieptt149/message:s14"
     container_name: message-ms
     depends_on:
       rabbit:
@@ -372,7 +372,7 @@ services:
       service: network-deploy-service
 
   gateway-server:
-    image: "hieptt149/gateway-server:s13"
+    image: "hieptt149/gateway-server:s14"
     container_name: gateway-server-ms
     ports:
       - "8072:8072"

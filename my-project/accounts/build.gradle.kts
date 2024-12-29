@@ -32,7 +32,8 @@ dependencies {
     implementation(libs.spring.cloud.openfeign)
     implementation(libs.spring.cloud.resilience4j)
     implementation(libs.spring.cloud.stream)
-    implementation(libs.spring.cloud.stream.binder.rabbit)
+//    implementation(libs.spring.cloud.stream.binder.rabbit)
+    implementation(libs.spring.cloud.stream.binder.kafka)
 
     implementation(libs.lombok)
     compileOnly(libs.lombok)
@@ -72,6 +73,6 @@ tasks.withType<Javadoc>() {
 
 jib {
     to {
-        image = "hieptt149/accounts:s13"
+        image = "hieptt149/accounts:s14"
     }
 }

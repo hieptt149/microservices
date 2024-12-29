@@ -4,7 +4,8 @@ springDependencyManagement = "1.1.7"
 springBootTest = "3.3.2"
 springCloudDependencies = "2024.0.0"
 springCloudStream = "4.2.0"
-springCloudStreamBinderRabbit = "4.2.0"
+#springCloudStreamBinderRabbit = "4.2.0"
+springCloudStreamBinderKafka = "4.2.0"
 springCloudStreamTestBinder = "3.2.10"
 junitPlatformLauncher = "1.11.4"
 jib = "3.4.4"
@@ -17,7 +18,8 @@ jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 [libraries]
 spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
 spring-cloud-stream = { module = "org.springframework.cloud:spring-cloud-stream", version.ref = "springCloudStream" }
-spring-cloud-stream-binder-rabbit = { module = "org.springframework.cloud:spring-cloud-stream-binder-rabbit", version.ref = "springCloudStreamBinderRabbit" }
+#spring-cloud-stream-binder-rabbit = { module = "org.springframework.cloud:spring-cloud-stream-binder-rabbit", version.ref = "springCloudStreamBinderRabbit" }
+spring-cloud-stream-binder-kafka = { module = "org.springframework.cloud:spring-cloud-stream-binder-kafka", version.ref = "springCloudStreamBinderKafka" }
 spring-cloud-stream-test-binder = { module = "org.springframework.cloud:spring-cloud-stream-binder-test", version.ref = "springCloudStreamTestBinder" }
 spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBootTest" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junitPlatformLauncher" }

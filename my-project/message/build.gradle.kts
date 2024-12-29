@@ -17,7 +17,8 @@ repositories {
 
 dependencies {
 	implementation(libs.spring.cloud.stream)
-	implementation(libs.spring.cloud.stream.binder.rabbit)
+//	implementation(libs.spring.cloud.stream.binder.rabbit)
+	implementation(libs.spring.cloud.stream.binder.kafka)
 	// bom implementation (~import mavenBom)
 	implementation(platform(libs.spring.cloud.dependencies))
 
@@ -33,6 +34,6 @@ tasks.withType<Test> {
 
 jib {
 	to {
-		image = "hieptt149/message:s13"
+		image = "hieptt149/message:s14"
 	}
 }

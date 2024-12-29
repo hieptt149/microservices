@@ -19,7 +19,8 @@ springCloudEurekaClient = "4.2.0"
 springCloudOpenFeign = "4.2.0"
 springCloudResilience4j = "3.2.0"
 springCloudStream = "4.2.0"
-springCloudStreamBinderRabbit = "4.2.0"
+#springCloudStreamBinderRabbit = "4.2.0"
+springCloudStreamBinderKafka = "4.2.0"
 jib = "3.4.4"
 micrometerPrometheus = "1.14.2"
 otel = "2.11.0"
@@ -47,4 +48,5 @@ spring-cloud-eureka-client = { module = "org.springframework.cloud:spring-cloud-
 spring-cloud-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "springCloudOpenFeign" }
 spring-cloud-resilience4j = { module = "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j", version.ref = "springCloudResilience4j" }
 spring-cloud-stream = { module = "org.springframework.cloud:spring-cloud-stream", version.ref = "springCloudStream" }
-spring-cloud-stream-binder-rabbit = { module = "org.springframework.cloud:spring-cloud-stream-binder-rabbit", version.ref = "springCloudStreamBinderRabbit" }
+#spring-cloud-stream-binder-rabbit = { module = "org.springframework.cloud:spring-cloud-stream-binder-rabbit", version.ref = "springCloudStreamBinderRabbit" }
+spring-cloud-stream-binder-kafka = { module = "org.springframework.cloud:spring-cloud-stream-binder-kafka", version.ref = "springCloudStreamBinderKafka" }
