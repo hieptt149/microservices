@@ -28,7 +28,8 @@ dependencies {
     // bom implementation (~import mavenBom)
     implementation(platform(libs.spring.cloud.dependencies))
     implementation(libs.spring.cloud.config)
-    implementation(libs.spring.cloud.eureka.client)
+//    implementation(libs.spring.cloud.eureka.client)
+    implementation(libs.spring.cloud.k8s.client)
     implementation(libs.spring.cloud.openfeign)
     implementation(libs.spring.cloud.resilience4j)
     implementation(libs.spring.cloud.stream)
@@ -73,6 +74,6 @@ tasks.withType<Javadoc>() {
 
 jib {
     to {
-        image = "hieptt149/accounts:s14"
+        image = "hieptt149/accounts:s17"
     }
 }

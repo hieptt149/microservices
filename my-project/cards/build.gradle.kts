@@ -28,7 +28,8 @@ dependencies {
     // bom implementation (~import mavenBom)
     implementation(platform(libs.spring.cloud.dependencies))
     implementation(libs.spring.cloud.config)
-    implementation(libs.spring.cloud.eureka.client)
+//    implementation(libs.spring.cloud.eureka.client)
+    implementation(libs.spring.cloud.k8s.client)
 
     implementation(libs.lombok)
     compileOnly(libs.lombok)
@@ -68,6 +69,6 @@ tasks.withType<Javadoc>() {
 
 jib {
     to {
-        image = "hieptt149/cards:s14"
+        image = "hieptt149/cards:s17"
     }
 }

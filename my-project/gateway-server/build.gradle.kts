@@ -28,7 +28,8 @@ dependencies {
 	implementation(platform(libs.spring.cloud.dependencies))
 	implementation(libs.spring.cloud.starter.config)
 	implementation(libs.spring.cloud.gateway)
-	implementation(libs.spring.cloud.eureka.client)
+//	implementation(libs.spring.cloud.eureka.client)
+	implementation(libs.spring.cloud.k8s.client)
 	implementation(libs.spring.cloud.reactor.resilience4j)
 	implementation(libs.micrometer.prometheus)
 	runtimeOnly(libs.opentelemetry)
@@ -45,6 +46,6 @@ tasks.withType<Test> {
 
 jib {
 	to {
-		image = "hieptt149/gateway-server:s14"
+		image = "hieptt149/gateway-server:s17"
 	}
 }

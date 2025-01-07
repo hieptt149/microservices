@@ -35,7 +35,7 @@ public class GatewayServerApplication {
                                         .setFallbackUri("forward:/contactSupport")
                                 )
                         )
-                        .uri("lb://ACCOUNTS")
+                        .uri("http://accounts:8080")
                 )
                 .route(predicateSpec -> predicateSpec.path("/eazybank/cards/**")
                         .filters(filterSpec -> filterSpec.rewritePath("/eazybank/cards/(?<segment>.*)", "/${segment}")
@@ -44,7 +44,7 @@ public class GatewayServerApplication {
                                         .setKeyResolver(userKeyResolver())
                                 )
                         )
-                        .uri("lb://CARDS")
+                        .uri("http://cards:9000")
                 )
                 .route(predicateSpec -> predicateSpec.path("/eazybank/loans/**")
                         .filters(filterSpec -> filterSpec.rewritePath("/eazybank/loans/(?<segment>.*)", "/${segment}")
@@ -54,7 +54,7 @@ public class GatewayServerApplication {
                                         .setBackoff(Duration.ofMillis(100), Duration.ofMillis(1000), 2, true)
                                 )
                         )
-                        .uri("lb://LOANS")
+                        .uri("http://loans:8090")
                 )
                 .build();
     }

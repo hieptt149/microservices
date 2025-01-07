@@ -15,7 +15,8 @@ springBootValidation = "3.3.2"
 springBootWeb = "3.3.2"
 springCloudDependencies = "2024.0.0"
 springCloudConfig = "4.1.3"
-springCloudEurekaClient = "4.2.0"
+#springCloudEurekaClient = "4.2.0"
+springCloudK8sClient = "2.1.3"
 jib = "3.4.4"
 micrometerPrometheus = "1.14.2"
 otel = "2.11.0"
@@ -39,4 +40,5 @@ spring-boot-validation = { module = "org.springframework.boot:spring-boot-starte
 spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBootWeb" }
 spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloudDependencies" }
 spring-cloud-config = { module = "org.springframework.cloud:spring-cloud-starter-config", version.ref = "springCloudConfig" }
-spring-cloud-eureka-client = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client", version.ref = "springCloudEurekaClient" }
+#spring-cloud-eureka-client = { module = "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client", version.ref = "springCloudEurekaClient" }
+spring-cloud-k8s-client = { module = "org.springframework.cloud:spring-cloud-starter-kubernetes-discoveryclient", version.ref = "springCloudK8sClient" }

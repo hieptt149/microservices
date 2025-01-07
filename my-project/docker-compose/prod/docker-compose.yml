@@ -267,7 +267,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "hieptt149/configserver:s14"
+    image: "hieptt149/configserver:s17"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -305,7 +305,7 @@ services:
       OTEL_SERVICE_NAME: "eureka-server"
 
   accounts:
-    image: "hieptt149/accounts:s14"
+    image: "hieptt149/accounts:s17"
     container_name: accounts-ms
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
@@ -325,7 +325,7 @@ services:
       service: ms-service-config
 
   loans:
-    image: "hieptt149/loans:s14"
+    image: "hieptt149/loans:s17"
     container_name: loans-ms
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
@@ -344,7 +344,7 @@ services:
       service: ms-service-config
 
   cards:
-    image: "hieptt149/cards:s14"
+    image: "hieptt149/cards:s17"
     container_name: cards-ms
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
@@ -363,7 +363,7 @@ services:
       service: ms-service-config
 
   message:
-    image: "hieptt149/message:s14"
+    image: "hieptt149/message:s17"
     container_name: message-ms
     environment:
       SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
@@ -372,7 +372,7 @@ services:
       service: network-deploy-service
 
   gateway-server:
-    image: "hieptt149/gateway-server:s14"
+    image: "hieptt149/gateway-server:s17"
     container_name: gateway-server-ms
     ports:
       - "8072:8072"
